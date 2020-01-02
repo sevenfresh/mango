@@ -1,0 +1,49 @@
+{
+	"name": "mango",
+	"displayName": "Mango",
+	"description": "Project Manage & Editor",
+	"version": "0.0.1",
+	"publisher": "sevenfresh",
+	"engines": {
+		"vscode": "^1.41.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.helloWorld"
+	],
+	"main": "./dist/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.helloWorld",
+				"title": "Hello World"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "yarn compile",
+		"webpack": "webpack --mode development",
+		"compile": "webpack --mode production",
+		"watch": "webpack --mode development --watch",
+		"pretest": "yarn run compile",
+		"test": "tsc -p ./ && node ./out/test/runTest.js",
+		"deploy": "vsce publish --yarn"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^5.2.7",
+		"@types/node": "^12.11.7",
+		"@types/vscode": "^1.41.0",
+		"glob": "^7.1.5",
+		"mocha": "^6.2.2",
+		"ts-loader": "^6.2.1",
+		"tslint": "^5.20.0",
+		"typescript": "^3.6.4",
+		"vsce": "^1.71.0",
+		"vscode-test": "^1.2.2",
+		"webpack": "^4.41.5",
+		"webpack-cli": "^3.3.10"
+	}
+}
