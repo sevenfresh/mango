@@ -12,10 +12,9 @@ install:
     fi
 script:
   - |
-    echo ">>> Compile vscode-test"
+    echo ">>> Compile mango"
     yarn && yarn compile
-    echo ">>> Compiled vscode-test"
-    cd sample
-    echo ">>> Run sample integration test"
-    yarn && yarn compile && yarn test
+    echo ">>> Compiled mango"
+    echo ">>> Run mango integration test"
+    yarn test
 cache: yarn
