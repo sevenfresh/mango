@@ -7,6 +7,7 @@
     "url": "https://github.com/SevenFresh/mango.git"
   },
   "version": "0.0.1",
+  "icon": "media/logo.png",
   "publisher": "sevenfresh",
   "engines": {
     "vscode": "^1.41.0"
@@ -15,24 +16,45 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:extension.helloWorld"
+    "onCommand:sf.create",
+    "onView:component",
+    "onWebviewPanel:sf.create"
   ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "extension.helloWorld",
-        "title": "Hello World"
+        "command": "sf.create",
+        "title": "Create Project"
       }
-    ]
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "sevenfresh",
+          "title": "SevenFresh",
+          "icon": "media/mango.svg"
+        }
+      ]
+    },
+    "views": {
+      "explorer": [
+        {
+          "id": "component",
+          "name": "Component",
+          "when": "explorer"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "yarn compile",
     "webpack": "webpack --mode development",
-    "compile": "webpack --mode production",
-    "watch": "webpack --mode development --watch",
+    "start": "webpack --mode development --watch",
+    "watch": "tsc -watch -p ./",
+    "compile": "tsc -p ./",
     "pretest": "yarn run compile",
-    "test": "tsc -p ./ && node ./out/test/runTest.js",
+    "test": "node ./out/test/runTest.js",
     "deploy": "vsce publish --yarn"
   },
   "devDependencies": {
