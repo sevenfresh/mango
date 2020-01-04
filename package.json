@@ -22,6 +22,24 @@
   ],
   "main": "./dist/extension.js",
   "contributes": {
+    "snippets": [
+      {
+        "language": "javascriptreact",
+        "path": "./snippets/react.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/react.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/react-ts.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/react-ts.json"
+      }
+    ],
     "commands": [
       {
         "command": "sf.create",
