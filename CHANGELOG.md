@@ -2,5 +2,10 @@
 
 ## 0.0.1
 
-- Add new project
-- Snippets
+- Init project
+
+## 0.0.2
+
+- Add react snippets
+- Add wxml snippets
+- Add wxml syntaxes
